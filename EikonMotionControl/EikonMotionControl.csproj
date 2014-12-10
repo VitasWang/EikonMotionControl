@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{98AE52CD-46F1-4DBA-AAD7-0FFFC016F3B1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{24B065ED-1FE9-444D-A6C5-B1B0BFEB0DEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThomsonReuters.Eikon.EikonMotionControl</RootNamespace>
+    <AssemblyName>ThomsonReuters.Eikon.EikonMotionControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableJSDebugging>False</EnableJSDebugging>
+    <!-- The following properties are used by the extension -->
+    <BaseExtensionPath>$(LOCALAPPDATA)</BaseExtensionPath>
+    <AppServerSDKPath>\Microsoft\VisualStudio\10.0\Extensions\Thomson Reuters\Eikon AppServer\1.0.0.11</AppServerSDKPath>
+    <IsAppServerApp>True</IsAppServerApp>
+    <CreatedVersion>1.0.0.11</CreatedVersion>
+    <UpgradedVersion>
+    </UpgradedVersion>
+    <AppServerSchemaVersion>1</AppServerSchemaVersion>
+    <AppEnginePath>Thomson Reuters\Eikon UI Toolkit\Eikon App Engine.appref-ms</AppEnginePath>
+    <AppEngineHostUrl>https://amers1.views.cp.icp2.mpp.reutest.com/TRS/ClickOnce/EikonAppEngine/EikonAppEngine.application</AppEngineHostUrl>
+    <DebuggerAttachTimeout>45</DebuggerAttachTimeout>
+    <AppServersToLaunch>2</AppServersToLaunch>
+    <AppEngineParameters>
+    </AppEngineParameters>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Speech, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Speech\v11.0\Assembly\Microsoft.Speech.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThomsonReuters.Eikon.Toolkit.Interfaces.Shared">
+      <HintPath>$(BaseExtensionPath)$(AppServerSDKPath)\ThomsonReuters.Eikon.Toolkit.Interfaces.Shared.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TR.AppServer.Interfaces">
+      <HintPath>$(BaseExtensionPath)$(AppServerSDKPath)\TR.AppServer.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\labels.en-US.resx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\labels.ja-JP.resx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\labels.zh-CN.resx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VersionedResources\client.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="VersionedResources\schema2.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationType.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Default.htm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="WebCallableFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

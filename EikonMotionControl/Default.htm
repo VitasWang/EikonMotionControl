@@ -1,0 +1,21 @@
+﻿<html class="etk-app-global">
+    <head>
+        <title>EikonMotionControl</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- AppServer: The toolkitver meta tag is required -->
+        <meta name="toolkitver" content="1.0.9.6702" />
+        <!-- AppServer: Place all resources under the VersionedResources subdirectory -->
+        <link rel="stylesheet" type="text/css" href="VersionedResources/schema2.css" />
+        <script language="javascript" type="text/javascript" src="VersionedResources/Client.js"></script>
+        <script type="text/javascript">
+            function toLowerCallback(data) {
+                var output = document.getElementById("outputTextL");
+                output.value = data;
+            }
+        </script>
+    </head>
+    <!-- AppServer: Set the page's title in top window onload -->
+    <body onload="window.top.document.title = document.title;">
+        <iframe name="map" width="100%" height="100%" src="https://apac1.views.cp.extranet.thomsonreuters.biz/Explorer/EVzCEzFreightzVesselxMovements.aspx?st=PHYSICALASSET.RIC&s=C%7dBL7309499213"></iframe>
+    </body>
+</html>
